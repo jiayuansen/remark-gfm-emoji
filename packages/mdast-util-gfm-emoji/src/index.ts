@@ -1,14 +1,10 @@
-import invariant from 'tiny-invariant';
+import { ok as assert } from 'devlop';
 import type { Literal, Data } from 'mdast';
 import type { Extension, CompileContext } from 'mdast-util-from-markdown';
 import type { Token } from 'micromark-util-types';
-import type { ElementContent, Properties } from 'hast';
+import type {} from 'mdast-util-to-hast';
 
-export type EmojiData = Data & {
-  hChildren?: ElementContent[] | undefined;
-  hName?: string | undefined;
-  hProperties?: Properties | undefined;
-};
+export type EmojiData = Data & {};
 
 export interface Emoji extends Literal {
   type: 'emoji';
@@ -49,7 +45,7 @@ function enterEmojiData(this: CompileContext, token: Token) {
 function exitEmoji(this: CompileContext, token: Token) {
   const data = this.resume();
   const node = this.stack[this.stack.length - 1];
-  invariant(node.type === 'emoji', 'Expected emoji');
+  assert(node.type === 'emoji', 'Expected emoji');
   node.value = data;
   node.data?.hChildren?.push({ type: 'text', value: data });
   this.exit(token);
