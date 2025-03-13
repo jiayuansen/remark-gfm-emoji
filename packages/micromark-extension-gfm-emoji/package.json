@@ -1,0 +1,32 @@
+{
+  "name": "micromark-extension-gfm-emoji",
+  "version": "0.0.1",
+  "description": "micromark extension for gfm emoji",
+  "keywords": [
+    "micromark",
+    "gfm",
+    "emoji"
+  ],
+  "license": "MIT",
+  "author": "hdsuperman",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackertalk/remark-gfm-emoji.git"
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
