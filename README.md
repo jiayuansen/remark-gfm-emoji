@@ -84,7 +84,6 @@ const components: Partial<Components & EmojiComponents> = {
 };
 
 const Markdown = ({ children, className }: { children: string; className?: string }) => {
-  const { theme } = useTheme();
   return (
     <div className={className}>
       <ReactMarkdown components={components} remarkPlugins={[remarkGfm, remarkGfmEmoji]}>
