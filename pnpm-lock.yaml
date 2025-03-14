@@ -95,11 +95,11 @@ importers:
   packages/remark-gfm-emoji:
     dependencies:
       mdast-util-gfm-emoji:
-        specifier: ^0.0.2
-        version: 0.0.2
+        specifier: ^0.0.3
+        version: 0.0.3
       micromark-extension-gfm-emoji:
-        specifier: ^0.0.2
-        version: 0.0.2
+        specifier: ^0.0.3
+        version: 0.0.3
     devDependencies:
       '@types/mdast':
         specifier: ^4.0.4
@@ -827,8 +827,8 @@ packages:
   mdast-util-from-markdown@2.0.2:
     resolution: {integrity: sha512-uZhTV/8NBuw0WHkPTrCqDOl0zVe1BIng5ZtHoDk49ME1qqcjYmmLmOf0gELgcRMxN4w2iuIeVso5/6QymSrgmA==}
 
-  mdast-util-gfm-emoji@0.0.2:
-    resolution: {integrity: sha512-rdZqNFr/bIMS8LWOGpVR2HW00UUuiKn/lziN4jm+w69WJP6V6paXPD7nO+FeXdUt1sSQBbinxiceZ/Q1ojI+NA==}
+  mdast-util-gfm-emoji@0.0.3:
+    resolution: {integrity: sha512-hXSzH4N+8tGR4NQYb80JiAnRfLjV4fJUwU7ROAUbCOESvFlqwWud4T4XrHFUU+dtx8z9RMQz1wkWq7uk12cJdw==}
 
   mdast-util-phrasing@4.1.0:
     resolution: {integrity: sha512-TqICwyvJJpBwvGAMZjj4J2n0X8QWp21b9l0o7eXyVJ25YNWYbJDVIyD1bZXE6WtV6RmKJVYmQAKWa0zWOABz2w==}
@@ -849,8 +849,8 @@ packages:
   micromark-core-commonmark@2.0.3:
     resolution: {integrity: sha512-RDBrHEMSxVFLg6xvnXmb1Ayr2WzLAWjeSATAoxwKYJV94TeNavgoIdA0a9ytzDSVzBy2YKFK+emCPOEibLeCrg==}
 
-  micromark-extension-gfm-emoji@0.0.2:
-    resolution: {integrity: sha512-wNsivFPEfQh/53jtFSy5uhCehzwXvPkjUDBRF/jVIsw6XPoG5meb2yTQwwrvUWd9e7HNjjFPRzum9EKSn+B4lg==}
+  micromark-extension-gfm-emoji@0.0.3:
+    resolution: {integrity: sha512-iuQUTu8N0meNMCx7HKzeyD9DGCOe4O9NQKkDqiUZcHHyE95MDlk1XLxInZQH32ejmMF+rTne5PBm7npOFqa6jQ==}
 
   micromark-factory-destination@2.0.1:
     resolution: {integrity: sha512-Xe6rDdJlkmbFRExpTOmRj9N3MaWmbAgdpSrBQvCFqhezUn4AHqJHbaEnfbVYYiexVSs//tqOdY/DxhjdCiJnIA==}
@@ -2173,7 +2173,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-gfm-emoji@0.0.2:
+  mdast-util-gfm-emoji@0.0.3:
     dependencies:
       devlop: 1.1.0
 
@@ -2231,7 +2231,7 @@ snapshots:
       micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.2
 
-  micromark-extension-gfm-emoji@0.0.2:
+  micromark-extension-gfm-emoji@0.0.3:
     dependencies:
       devlop: 1.1.0
       micromark-util-symbol: 2.0.1
