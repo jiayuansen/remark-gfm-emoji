@@ -1,6 +1,6 @@
 {
   "name": "remark-gfm-emoji",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "remark plugin for gfm emoji",
   "keywords": [
     "remark",

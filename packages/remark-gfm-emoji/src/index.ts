@@ -5,7 +5,7 @@ import type { Processor, Plugin } from 'unified';
 import type {} from 'remark-parse';
 import type {} from 'remark-stringify';
 
-export const remarkGfmEmoji: Plugin<[], Root> & ThisType<Processor<Root>> = function () {
+const remarkGfmEmoji: Plugin<[], Root> & ThisType<Processor<Root>> = function () {
   const data = this.data();
 
   const micromarkExtensions = data.micromarkExtensions || (data.micromarkExtensions = []);
@@ -14,3 +14,5 @@ export const remarkGfmEmoji: Plugin<[], Root> & ThisType<Processor<Root>> = func
   micromarkExtensions.push(emoji);
   fromMarkdownExtensions.push(emojiFromMarkdown);
 };
+
+export default remarkGfmEmoji;
