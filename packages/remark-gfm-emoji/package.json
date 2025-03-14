@@ -1,6 +1,6 @@
 {
   "name": "remark-gfm-emoji",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "remark plugin for gfm emoji",
   "keywords": [
     "remark",
@@ -27,6 +27,14 @@
     "dist"
   ],
   "devDependencies": {
-    "typescript": "^5.8.2"
+    "@types/mdast": "^4.0.4",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "typescript": "^5.8.2",
+    "unified": "^11.0.5"
+  },
+  "dependencies": {
+    "mdast-util-gfm-emoji": "^0.0.2",
+    "micromark-extension-gfm-emoji": "^0.0.2"
   }
 }
