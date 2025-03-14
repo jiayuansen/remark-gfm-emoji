@@ -1,6 +1,6 @@
 {
   "name": "micromark-extension-gfm-emoji",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "micromark extension for gfm emoji",
   "keywords": [
     "micromark",
@@ -27,11 +27,11 @@
     "dist"
   ],
   "devDependencies": {
+    "micromark-util-types": "^2.0.2",
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "micromark-util-symbol": "^2.0.1",
-    "micromark-util-types": "^2.0.2",
-    "tiny-invariant": "^1.3.3"
+    "devlop": "^1.1.0",
+    "micromark-util-symbol": "^2.0.1"
   }
 }

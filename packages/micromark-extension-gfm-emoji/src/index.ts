@@ -1,5 +1,5 @@
 import { codes, types } from 'micromark-util-symbol';
-import invariant from 'tiny-invariant';
+import { ok as assert } from 'devlop';
 import type { Code, TokenizeContext, State, Effects, Extension } from 'micromark-util-types';
 
 declare module 'micromark-util-types' {
@@ -79,8 +79,8 @@ function emojiTokenizer(this: TokenizeContext, effects: Effects, ok: State, nok:
    * ```
    */
   function start(code: Code): State | undefined {
-    invariant(code === codes.colon, 'Expected `:`');
-    invariant(previous.call(self, self.previous), 'expected correct previous');
+    assert(code === codes.colon, 'Expected `:`');
+    assert(previous.call(self, self.previous), 'expected correct previous');
     effects.enter('emoji');
     effects.enter('emojiSequence');
     return sequenceOpen(code);
