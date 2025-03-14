@@ -100,7 +100,7 @@ export default memo(Markdown, (prev, next) => prev.children === next.children);
 ### Custom rendering
 
 1. Get google(Apache 2.0)/twitter(CC4) emoji image from [emoji-data](https://github.com/iamcal/emoji-data).
-2. Upolad emoji images to you storage(s3) + CDN.
+2. Upolad emoji images to your storage(s3) + CDN.
 3. Convert emoji to utf32 code
 
    ```ts
