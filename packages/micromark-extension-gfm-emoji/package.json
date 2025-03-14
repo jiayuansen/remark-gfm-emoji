@@ -1,6 +1,7 @@
 {
   "name": "micromark-extension-gfm-emoji",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "type": "module",
   "description": "micromark extension for gfm emoji",
   "keywords": [
     "micromark",
