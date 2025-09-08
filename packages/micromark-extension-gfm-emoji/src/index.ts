@@ -10,6 +10,12 @@ declare module 'micromark-util-types' {
   }
 }
 
+export interface Options {
+  filter?: (data: string) => boolean;
+}
+
+const options: Options = {}
+
 function previous(this: TokenizeContext, code: Code) {
   // If there is a previous code, there will always be a tail.
   return (
@@ -61,6 +67,7 @@ const TEXT_CODES: number[] = [
 ];
 
 function emojiTokenizer(this: TokenizeContext, effects: Effects, ok: State, nok: State): State {
+  const chars: number[] = []
   // eslint-disable-next-line @typescript-eslint/no-this-alias
   const self = this;
 
@@ -125,7 +132,10 @@ function emojiTokenizer(this: TokenizeContext, effects: Effects, ok: State, nok:
     if (code === codes.colon) {
       effects.enter('emojiSequence');
       size = 0;
-      return sequenceClose(code);
+      const { filter } = options
+      return typeof filter === "function" && filter(String.fromCharCode(...chars))
+        ? sequenceClose(code)
+        : nok(code);
     }
 
     if (!TEXT_CODES.includes(code)) {
@@ -149,6 +159,7 @@ function emojiTokenizer(this: TokenizeContext, effects: Effects, ok: State, nok:
       effects.exit('emojiData');
       return between(code);
     }
+    chars.push(code)
     effects.consume(code);
     return data;
   }
@@ -181,12 +192,15 @@ function emojiTokenizer(this: TokenizeContext, effects: Effects, ok: State, nok:
   }
 }
 
-export const emoji: Extension = {
-  text: {
-    [codes.colon]: {
-      name: 'emoji',
-      previous,
-      tokenize: emojiTokenizer,
+export const emoji = (opts?: Options): Extension => {
+  Object.assign(options, opts)
+  return {
+    text: {
+      [codes.colon]: {
+        name: 'emoji',
+        previous,
+        tokenize: emojiTokenizer,
+      },
     },
-  },
+  }
 };

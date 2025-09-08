@@ -16,12 +16,15 @@ import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
 import remarkGfmEmoji from 'remark-gfm-emoji';
 
-const processor = unified().use(remarkParse).use(remarkGfm).use(remarkGfmEmoji);
+const processor = unified()
+  .use(remarkParse)
+  .use(remarkGfm)
+  .use(remarkGfmEmoji, { filter: value => value === "smile" });
 
 const ast = processor.parse(':smile:');
 console.log(ast);
 ```
-
+Note: The filter configuration option is optional.
 ```json
 {
   "type": "root",
